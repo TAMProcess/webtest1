@@ -25,9 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function createParticles() {
-        const particlesContainer = document.createElement('div');
-        particlesContainer.classList.add('particles');
-        document.body.appendChild(particlesContainer);
+        const particlesContainer = document.querySelector('.particles');
 
         for (let i = 0; i < 50; i++) {
             const particle = document.createElement('div');
