@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #000;
     color: #fff;
     cursor: none;
@@ -16,71 +16,30 @@ body, html {
     justify-content: center;
     height: 100vh;
     position: relative;
+    background-color: #111;
 }
 
-.animation-container {
-    perspective: 1000px;
-}
-
-.cube {
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    animation: rotate 5s infinite linear;
-    transform-style: preserve-3d;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotateX(0deg) rotateY(0deg);
-    }
-    to {
-        transform: rotateX(360deg) rotateY(360deg);
-    }
+.intro-image {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 #enter-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #fff;
-    color: #000;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #00f;
+    color: #fff;
     border: none;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-#enter-button:before {
-    content: 'Enter';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #fff;
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.5s;
-}
-
-#enter-button:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s;
-}
-
-#enter-button:hover:after {
-    opacity: 1;
+#enter-button:hover {
+    background-color: #00b;
 }
 
 .main-content {
@@ -91,16 +50,26 @@ body, html {
     height: 100vh;
     text-align: center;
     position: relative;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.content-wrapper {
+    z-index: 1;
 }
 
 .main-content h1 {
     font-size: 3em;
     margin-bottom: 20px;
+    color: #0f0;
+    text-shadow: 2px 2px #00f;
 }
 
-.main-content p {
+.tech-text {
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: #0ff;
+    text-shadow: 1px 1px #f00;
 }
 
 .particles {
@@ -111,6 +80,7 @@ body, html {
     height: 100%;
     overflow: hidden;
     pointer-events: none;
+    z-index: 0;
 }
 
 .particle {
@@ -136,13 +106,14 @@ body, html {
 
 .cursor-follower {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     background-color: transparent;
     border-radius: 50%;
     pointer-events: none;
     z-index: 1000;
     transition: transform 0.1s ease-out;
+    border: 2px solid #0f0;
 }
 
 .cursor-follower::before {
@@ -150,9 +121,9 @@ body, html {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 5px;
-    height: 5px;
-    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    background-color: #0f0;
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
